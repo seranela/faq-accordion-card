@@ -42,7 +42,7 @@ Users should be able to:
 
 Achieving interaction without using JavaScript and using only CSS selectors.
 
-Background image positioning offsets (background-position: 3 or 4-value setting) is bit of a tricky thing to understand. Instead of offseting from named vales (left, center, etc), use the equivalant numerical value for offsetting or use a calc().
+Background image positioning offsets (background-position: 3 or 4-value setting) is bit of a tricky thing to understand. Instead of offseting from named vales (left, center, etc), use the equivalent numerical value for offsetting or use a calc().
 
 Note: I attempted this without looking at existing solutions to see if I could figure it out myself.
 
