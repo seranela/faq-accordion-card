@@ -1,0 +1,194 @@
+:root {
+  --color-primary-dark-muted-blue: hsl(238, 29%, 16%);
+  --color-primary-soft-red: hsl(14, 88%, 65%);
+  --color-primary-soft-violet: hsl(273, 75%, 66%);
+  --color-primary-soft-blue: hsl(240, 73%, 65%);
+  --color-neutral-extra-dark-gray-blue: hsl(237, 12%, 33%);
+  --color-neutral-dark-gray-blue: hsl(240, 6%, 50%);
+  --color-neutral-light-gray-blue: hsl(240, 5%, 91%);
+  --font-family: 'Kumbh Sans', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 400 0.875rem var(--font-family);
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(var(--color-primary-soft-violet), var(--color-primary-soft-blue));
+  padding: 1.3rem;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  min-width: 20rem;
+  max-width: 58rem;
+  width: 100%;
+  background-color: white;
+  padding: 1.3rem;
+  box-shadow: 0px 30px 50px hsla(238, 29%, 16%, 0.5);
+}
+
+.card::before {
+  /* Outline for easy visual debugging
+  outline: 1px solid limegreen;*/
+  content: '';
+  position: absolute;
+  top: -145px;
+  left: 2rem;
+  right: 2rem;
+  height: 250px;
+  background:
+    url(../images/illustration-woman-online-mobile.svg) center / 250px auto no-repeat,
+    url(../images/bg-pattern-mobile.svg) center 140px / 250px auto no-repeat;
+}
+
+.card h1 {
+  font-size: 2.2em;
+  text-align: center;
+  margin: 0;
+  padding-top: 8rem;
+}
+
+.faq div {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--color-neutral-light-gray-blue);
+}
+
+/* Hide the checkbox but make it accessible */
+.dt-checkbox {
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.dt-checkbox:checked + dt {
+  font-weight: 700;
+}
+
+/* Only show focus outline when using tab key - not when clicked */
+.dt-checkbox:focus-visible + dt label {
+  outline: 1px solid blue;
+}
+
+/* Expand <dd> when clicked */
+.dt-checkbox:checked ~ dd {
+  display: block;
+}
+
+/* Rotate arrow when expanded */
+.dt-checkbox:checked + dt label::before {
+  transform: rotate(180deg);
+}
+
+dt {
+  position: relative;
+  color: var(--color-neutral-extra-dark-gray-blue);
+  padding-right: 2em;
+  cursor: pointer;
+}
+
+/* Expand/Collapse arrow */
+label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0.7rem;
+  background-image: url(../images/icon-arrow-down.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+dt label {
+  display: block;
+  cursor: pointer;
+}
+
+dt:focus {
+  color: var(--color-primary-dark-muted-blue);
+  font-weight: 700;
+}
+
+dt:hover {
+  color: var(--color-primary-soft-red);
+}
+
+dd {
+  display: none;
+  color: var(--color-neutral-dark-gray-blue);
+  font-size: 0.95em;
+  margin: 0;
+  padding-top: 1em;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 1.3rem 6.5rem;
+  }
+  .card {
+    padding: 4.2rem 5rem;
+  }
+  .card h1 {
+    text-align: left;
+    margin-left: 50%;
+    padding-top: 0;
+  }
+  .faq {
+    margin-left: 50%;
+  }
+  .faq div {
+    padding: 1.25em 0;
+  }
+  dd {
+    padding-top: 1.25em;
+  }
+  .card::before {
+    top: 0;
+    left: 0;
+    width: calc(50% - 4rem);
+    height: 100%;
+    background:
+      url(../images/illustration-woman-online-desktop.svg) 100% center / 120% no-repeat,
+      url(../images/bg-pattern-desktop.svg) 100% calc(50% - 70px) / 230% no-repeat;
+  }
+  .card::after {
+    /* Outline for easy visual debugging
+    outline: 1px solid orange; */
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: clamp(-100px, -8vw, -50px);
+    width: 16vw;
+    min-width: 30px;
+    max-width: 200px;
+    background: url(../images/illustration-box-desktop.svg) center calc(50% + 30px) / 100% no-repeat;
+  }
+}
