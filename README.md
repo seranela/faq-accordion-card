@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://seranela.github.io/faq-accordion-card/](https://seranela.github.io/faq-accordion-card/)
 
 ## My process
 
@@ -43,6 +43,8 @@ Users should be able to:
 Achieving interaction without using JavaScript and using only CSS selectors.
 
 Background image positioning offsets (background-position: 3 or 4-value setting) is bit of a tricky thing to understand. Instead of offseting from named vales (left, center, etc), use the equivalent numerical value for offsetting or use a calc().
+
+I personally agree that using a &lt;dl&gt; definition list seems more semantic for an FAQ but setting it up for accessibility without using JavaScript (to get the bonus challenge) was super tricky to get 100 score in accessibility and frankly becoming verbose. I ended up using a &lt;details&gt; element and the resulting code was so much cleaner and easier to work with. It also passed accessibility tests in Firefox, Chrome (score of 100) and WebAIM.
 
 Note: I attempted this without looking at existing solutions to see if I could figure it out myself.
 
