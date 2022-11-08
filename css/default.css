@@ -97,7 +97,8 @@ img {
 
 /* Expand <dd> when clicked */
 .dt-checkbox:checked ~ dd {
-  display: block;
+  height: auto;
+  padding-top: 1em;
 }
 
 /* Rotate arrow when expanded */
@@ -141,11 +142,11 @@ dt:hover {
 }
 
 dd {
-  display: none;
   color: var(--color-neutral-dark-gray-blue);
   font-size: 0.95em;
   margin: 0;
-  padding-top: 1em;
+  height: 0;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -166,8 +167,11 @@ dd {
   .faq div {
     padding: 1.25em 0;
   }
-  dd {
+  .dt-checkbox:checked ~ dd {
     padding-top: 1.25em;
+  }
+  dd {
+    padding-top: 0m;
   }
   .card::before {
     top: 0;
