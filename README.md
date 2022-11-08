@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/faq-accordion-card-rXNAkSj8Yf](https://www.frontendmentor.io/solutions/faq-accordion-card-rXNAkSj8Yf)
 - Live Site URL: [https://seranela.github.io/faq-accordion-card/](https://seranela.github.io/faq-accordion-card/)
 
 ## My process
