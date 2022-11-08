@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Frontend Mentor Challenge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,58 +14,31 @@
 <body>
   <main class="card">
     <h1>FAQ</h1>
-    <dl class="faq">
-      <div>
-        <input type="checkbox" name="faq" id="faq1" class="dt-checkbox">
-        <dt>
-          <label for="faq1">How many team members can I invite?</label>
-        </dt>
-        <dd>
-          You can invite up to 2 additional users on the Free plan.
-          There is no limit on team members for the Premium plan.
-        </dd>
-      </div>
-      <div>
-        <input type="checkbox" name="faq" id="faq2" class="dt-checkbox">
-        <dt>
-          <label for="faq2">What is the maximum file upload size?</label>
-        </dt>
-        <dd>
-          No more than 2GB. All files in your account must fit your
-          allotted storage space.
-        </dd>
-      </div>
-      <div>
-        <input type="checkbox" name="faq" id="faq3" class="dt-checkbox">
-        <dt>
-          <label for="faq3">How do I reset my password?</label>
-        </dt>
-        <dd>
-          Click “Forgot password” from the login page or “Change password”
-          from your profile page. A reset link will be emailed to you.
-        </dd>
-      </div>
-      <div>
-        <input type="checkbox" name="faq" id="faq4" class="dt-checkbox">
-        <dt>
-          <label for="faq4">Can I cancel my subscription?</label>
-        </dt>
-        <dd>
-          Yes! Send us a message and we'll process your request no
-          questions asked.
-        </dd>
-      </div>
-      <div>
-        <input type="checkbox" name="faq" id="faq5" class="dt-checkbox">
-        <dt>
-          <label for="faq5">Do you provide additional support?</label>
-        </dt>
-        <dd>
-          Chat and email support is available 24/7. Phone lines are open
-          during normal business hours.
-        </dd>
-      </div>
-    </dl>
+    <details>
+      <summary>How many team members can I invite?</summary>
+      <p>You can invite up to 2 additional users on the Free plan.
+        There is no limit on team members for the Premium plan.</p>
+    </details>
+    <details>
+      <summary>What is the maximum file upload size?</summary>
+      <p>No more than 2GB. All files in your account must fit your
+        allotted storage space.</p>
+    </details>
+    <details>
+      <summary>How do I reset my password?</summary>
+      <p>Click “Forgot password” from the login page or “Change password”
+        from your profile page. A reset link will be emailed to you.</p>
+    </details>
+    <details>
+      <summary>Can I cancel my subscription?</summary>
+      <p>Yes! Send us a message and we'll process your request no
+        questions asked.</p>
+    </details>
+    <details>
+      <summary>Do you provide additional support?</summary>
+      <p>Chat and email support is available 24/7. Phone lines are open
+        during normal business hours.</p>
+    </details>
   </main>
 </body>
 </html>

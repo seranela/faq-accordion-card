@@ -43,13 +43,11 @@ img {
   max-width: 58rem;
   width: 100%;
   background-color: white;
-  padding: 1.3rem;
+  padding: 1.3rem 1.3rem 3rem 1.3rem;
   box-shadow: 0px 30px 50px hsla(238, 29%, 16%, 0.5);
 }
 
 .card::before {
-  /* Outline for easy visual debugging
-  outline: 1px solid limegreen;*/
   content: '';
   position: absolute;
   top: -145px;
@@ -61,92 +59,60 @@ img {
     url(../images/bg-pattern-mobile.svg) center 140px / 250px auto no-repeat;
 }
 
-.card h1 {
+.card > h1 {
   font-size: 2.2em;
   text-align: center;
   margin: 0;
   padding-top: 8rem;
+  padding-bottom: 1.3rem;
 }
 
-.faq div {
-  padding: 1em 0;
+details {
+  padding: 1.2em 0;
   border-bottom: 1px solid var(--color-neutral-light-gray-blue);
 }
 
-/* Hide the checkbox but make it accessible */
-.dt-checkbox {
-  border: 0;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.dt-checkbox:checked + dt {
-  font-weight: 700;
-}
-
-/* Only show focus outline when using tab key - not when clicked */
-.dt-checkbox:focus-visible + dt label {
-  outline: 1px solid blue;
-}
-
-/* Expand <dd> when clicked */
-.dt-checkbox:checked ~ dd {
-  height: auto;
-  padding-top: 1em;
-}
-
-/* Rotate arrow when expanded */
-.dt-checkbox:checked + dt label::before {
-  transform: rotate(180deg);
-}
-
-dt {
+details > summary {
   position: relative;
+	list-style: none;
+	cursor: pointer;
   color: var(--color-neutral-extra-dark-gray-blue);
-  padding-right: 2em;
-  cursor: pointer;
+  font-weight: 400;
+  padding-right: 1.2em;
 }
 
-/* Expand/Collapse arrow */
-label::before {
+details > summary::after {
   content: '';
   position: absolute;
-  top: 0;
+  top: 0.2rem;
   right: 0;
-  bottom: 0;
   width: 0.7rem;
-  background-image: url(../images/icon-arrow-down.svg);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  height: 0.7rem;
+  background: url(../images/icon-arrow-down.svg) center / contain no-repeat;
 }
 
-dt label {
-  display: block;
-  cursor: pointer;
-}
-
-dt:focus {
+details > summary:focus {
   color: var(--color-primary-dark-muted-blue);
-  font-weight: 700;
 }
 
-dt:hover {
+details > summary:hover {
   color: var(--color-primary-soft-red);
 }
 
-dd {
+details[open] > summary {
+  font-weight: 700;
+}
+
+/* Rotate arrow when expanded */
+details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+details > p {
   color: var(--color-neutral-dark-gray-blue);
   font-size: 0.95em;
-  margin: 0;
-  height: 0;
-  overflow: hidden;
+  line-height: 1.2;
+  margin: 1em 0 0 0;
 }
 
 @media (min-width: 768px) {
@@ -155,23 +121,6 @@ dd {
   }
   .card {
     padding: 4.2rem 5rem;
-  }
-  .card h1 {
-    text-align: left;
-    margin-left: 50%;
-    padding-top: 0;
-  }
-  .faq {
-    margin-left: 50%;
-  }
-  .faq div {
-    padding: 1.25em 0;
-  }
-  .dt-checkbox:checked ~ dd {
-    padding-top: 1.25em;
-  }
-  dd {
-    padding-top: 0m;
   }
   .card::before {
     top: 0;
@@ -183,8 +132,6 @@ dd {
       url(../images/bg-pattern-desktop.svg) 100% calc(50% - 70px) / 230% no-repeat;
   }
   .card::after {
-    /* Outline for easy visual debugging
-    outline: 1px solid orange; */
     content: '';
     position: absolute;
     top: 0;
@@ -194,5 +141,13 @@ dd {
     min-width: 30px;
     max-width: 200px;
     background: url(../images/illustration-box-desktop.svg) center calc(50% + 30px) / 100% no-repeat;
+  }
+  .card > h1 {
+    text-align: left;
+    margin-left: 50%;
+    padding-top: 0;
+  }
+  details {
+    margin-left: 50%;
   }
 }
